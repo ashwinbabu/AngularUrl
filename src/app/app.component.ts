@@ -17,6 +17,7 @@ export class AppComponent {
     inp.value = "";
     this.longUrl = url.value.longURL;
     let random = this.getRandomInt();
+    console.log(url,this.longUrl);
     this.shortUrl = "https://ashbob.herokuapp.com/"+random;
     this.service.send({
       "shortUrl" : random,
