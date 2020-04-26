@@ -4,7 +4,7 @@
     <div class="form-group">
         <form #x="ngForm" (submit)="submit(x,input)">
             <input ngModel #input #y="ngModel" name="longURL" type="text" id="long" placeholder="Long URL here">
-            <button type="submit" id="submit" [disabled]="x.valid">submit</button>
+            <button type="submit" id="submit">submit</button>
         </form>
     </div>
     <div *ngIf="!regex.test(input.value) && y.touched && y.dirty && input.value!=''" class="error">Invalid URL</div>
