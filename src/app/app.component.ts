@@ -26,11 +26,10 @@ export class AppComponent {
   submit(url,inp : HTMLInputElement,xyz){
     inp.value = "";
 
-    console.log("FORM GROUP : ", xyz);
-
+    console.log(xyz);
+    
     this.longUrl = this.removeHttp(url.value.longURL);
     
-
     let random = this.getRandomInt();
     this.shortUrl = "https://ashbob.herokuapp.com/"+random;
     this.service.send({
