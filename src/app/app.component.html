@@ -2,12 +2,12 @@
 <div class="container">
     <h1 id="shrink">"SHRINK"</h1>
     <div class="form-group">
-        <form #x="ngForm" (submit)="submit(x,input)">
-            <input ngModel #input #y="ngModel" name="longURL" type="text" id="long" placeholder="Long URL here">
-            <button type="submit" id="submit">submit</button>
+        <form #x="ngForm" (submit)="submit(x,input,xyz)" [formGroup]="form" #xyz = "formGroup">
+            <input ngModel #input #y="ngModel" name="longURL" type="text" id="long" placeholder="Long URL here" formControlName="longUrlValid">
+            <button type="submit" id="submit" >submit</button>
         </form>
     </div>
-    <div *ngIf="!regex.test(input.value) && y.touched && y.dirty && input.value!=''" class="error">Invalid URL</div>
+    <div *ngIf="form.get('longUrlValid').invalid && y.touched && y.dirty && input.value!=''" class="error">Invalid URL</div>
     <div class="shortDisp" *ngIf="shortUrl">
         <label for="short">Your Link : </label>
         <h1 id="short">{{shortUrl}}</h1>

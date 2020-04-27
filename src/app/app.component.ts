@@ -1,5 +1,7 @@
+import { FormValidators } from './form.validators';
 import { NodeService } from './node.service';
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -8,14 +10,22 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
   regex = new RegExp("^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$");
   title = 'url-shortener';
   longUrl : string;
   shortUrl :string;
-  constructor(private service : NodeService){}
+  form;
+
+  constructor(private service : NodeService , fb : FormBuilder){
+   this.form = fb.group({
+      longUrlValid : ['',[Validators.required,FormValidators.validUrl]]
+    })
+  }
   
-  submit(url,inp : HTMLInputElement){
+  submit(url,inp : HTMLInputElement,xyz){
     inp.value = "";
+    console.log(xyz);
 
     this.longUrl = this.removeHttp(url.value.longURL);
     
