@@ -94,11 +94,11 @@ input[type=text]:focus, textarea:focus {
   color: red;
 }
 
-.buttonError{
+#submit.buttonError{
   border: 1px solid red;
 }
 
-.buttonSuccess{
+#submit.buttonSuccess{
   border: 1px solid greenyellow;
   color: greenyellow;
 }
