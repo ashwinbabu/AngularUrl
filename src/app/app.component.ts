@@ -23,7 +23,7 @@ export class AppComponent {
     })
   }
   
-  submit(url,inp : HTMLInputElements){
+  submit(url,inp : HTMLInputElement){
     inp.value = "";
 
     this.longUrl = this.removeHttp(url.value.longURL);
