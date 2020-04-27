@@ -13,11 +13,14 @@ export class AppComponent {
   longUrl : string;
   shortUrl :string;
   constructor(private service : NodeService){}
+  
   submit(url,inp : HTMLInputElement){
     inp.value = "";
-    this.longUrl = url.value.longURL;
+
+    this.longUrl = this.removeHttp(url.value.longURL);
+    
+
     let random = this.getRandomInt();
-    console.log(url,this.longUrl);
     this.shortUrl = "https://ashbob.herokuapp.com/"+random;
     this.service.send({
       "shortUrl" : random,
@@ -31,5 +34,13 @@ export class AppComponent {
     let min = Math.ceil(1000);
     let max = Math.floor(9999);
     return Math.floor(Math.random() * (max - min)) + min;
+  }
+
+  removeHttp(longurl){
+    var urlHttp = /^(http|https):\/\//gm;
+    if(longurl.match(urlHttp)){
+      longurl = longurl.replace(urlHttp,"");
+    }
+    return longurl;
   }
 }
