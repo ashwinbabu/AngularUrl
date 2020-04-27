@@ -93,3 +93,12 @@ input[type=text]:focus, textarea:focus {
 .error{
   color: red;
 }
+
+.buttonError{
+  border: 1px solid red;
+}
+
+.buttonSuccess{
+  border: 1px solid greenyellow;
+  color: greenyellow;
+}
