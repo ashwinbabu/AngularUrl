@@ -17,7 +17,8 @@ import { ClipboardModule } from 'ngx-clipboard';
     FormsModule,
     HttpClientModule,
     ClipboardModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgModule
   ],
   providers: [NodeService],
   bootstrap: [AppComponent]
