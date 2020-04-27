@@ -36,7 +36,7 @@ export class AppComponent {
       "shortUrl" : random,
       "longUrl" : this.longUrl
     }).subscribe((x)=>{
-      console.log(x);
+      //console.log(x);
     })
   }
   
