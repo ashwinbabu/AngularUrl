@@ -23,11 +23,9 @@ export class AppComponent {
     })
   }
   
-  submit(url,inp : HTMLInputElement,xyz){
+  submit(url,inp : HTMLInputElements){
     inp.value = "";
 
-    console.log(xyz);
-    
     this.longUrl = this.removeHttp(url.value.longURL);
     
     let random = this.getRandomInt();

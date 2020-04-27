@@ -2,7 +2,7 @@
 <div class="container">
     <h1 id="shrink">"SHRINK"</h1>
     <div class="form-group">
-        <form #x="ngForm" (submit)="submit(x,input,form)">
+        <form #x="ngForm" (submit)="submit(x,input)">
             <input ngModel #input #y="ngModel" name="longURL" type="text" id="long" placeholder="Long URL here">
             <button 
             type="submit" 
