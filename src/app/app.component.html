@@ -7,9 +7,9 @@
             <button 
             type="submit" 
             id="submit" 
-            [disabled]="!regex.test(input.value) && y.touched && y.dirty && input.value==''" 
-            [class.buttonError]="!regex.test(input.value) && y.touched && y.dirty && input.value==''"
-            [class.buttonSuccess] = "regex.test(input.value) && input.value!=''"
+            [disabled]="!regex.test(input.value)" 
+            [class.buttonError]="!regex.test(input.value) || input.value==''"
+            [class.buttonSuccess] = "regex.test(input.value)"
             >submit</button>
         </form>
     </div>
