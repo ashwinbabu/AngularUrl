@@ -25,7 +25,8 @@ export class AppComponent {
   
   submit(url,inp : HTMLInputElement,xyz){
     inp.value = "";
-    console.log("FormGroup element : ",xyz);
+
+    console.log("FORM GROUP : ", xyz);
 
     this.longUrl = this.removeHttp(url.value.longURL);
     
