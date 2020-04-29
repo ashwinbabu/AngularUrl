@@ -16,7 +16,7 @@
     <div *ngIf="!regex.test(input.value) && y.touched && y.dirty && input.value!=''" class="error">Invalid URL</div>
     <div class="shortDisp" *ngIf="shortUrl">
         <label for="short">Your Link : </label>
-        <h1 id="short">{{shortUrl}}</h1>
+        <a [attr.href]="shortUrl"><h1 id="short">{{shortUrl}}</h1></a>
         <button id="copy" ngxClipboard [cbContent] = "shortUrl">copy</button>
     </div>
 </div>
